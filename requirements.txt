@@ -1,9 +1,8 @@
 streamlit
 pandas
-spacy
+spacy==3.7.2
 textblob
-tensorflow
 numpy
 scikit-learn
 plotly
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
+tensorflow-cpu==2.13.0
