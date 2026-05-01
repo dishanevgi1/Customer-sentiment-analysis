@@ -18,10 +18,14 @@ st.set_page_config(
 
 # --- LOAD RESOURCES (Cache them for speed) ---
 
-# 1. Load Spacy Model (For Task 1)
 @st.cache_resource
 def load_nlp_model():
-    return spacy.load("en_core_web_sm")
+    try:
+        return spacy.load("en_core_web_sm")
+    except:
+        import subprocess
+        subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+        return spacy.load("en_core_web_sm")
 
 # 2. Load ANN Resources (Model + Tokenizer + Encoder)
 @st.cache_resource
